@@ -1,0 +1,103 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgba(30, 25, 25, 0.911);
+    height: 100%;
+}
+
+.header {
+    display: flex;
+    height: 50px;
+    width: 100%;
+    background-color: burlywood;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;  /* Keeps the header on top */
+}
+
+.header h1 {
+    height: 50px;
+    width: 80px;
+}
+
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 130px);  /* Full viewport height minus header and prompt area */
+    padding: 10px;
+    overflow-y: auto;  /* Enables scrolling */
+    margin-top: 50px;  /* Pushes below the fixed header */
+    padding-bottom: 100px;  /* Ensures content doesn't go under the prompt */
+}
+
+.chat-container img{
+    height:fit-content;
+    width: 80px;
+    color: aliceblue;
+}
+
+.user-chat-area, .ai-chat-area {
+    display: flex;
+    background-color: black;
+    width: 120vh;
+    color: white;
+    border-radius: 10px;
+    word-wrap: break-word;
+    padding: 5px;
+    margin-top: 20px;
+    overflow: auto;
+    gap: 10px;
+}
+
+.user-chat-area {
+    max-height: 70px;
+}
+
+.user-chat-box {
+    display: flex;
+    gap: 25px;
+    justify-content: right;
+}
+
+.ai-chat-box {
+    display: flex;
+    gap: 25px;
+}
+
+.prompt-area {
+    height: 80px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;  /* Fixes it at the bottom of the viewport */
+    bottom: 0;        /* Aligns it to the bottom */
+    left: 0;
+    background-color: rgba(30, 25, 25, 0.911);  /* Matches body background if desired */
+    z-index: 1000;    /* Ensures it stays above other content */
+}
+
+#prompt {
+    height: 51px;
+    width: 400px;
+    background-color: black;
+    color: white;
+    border-radius: 50px;
+    box-shadow: none;
+    outline: none;
+}
+.prompt-area button{
+    margin-left:7px;
+    height: 40px;
+    width: 50px;
+    color: white;
+    border-radius: 50%;
+    background-color: black;
+}
